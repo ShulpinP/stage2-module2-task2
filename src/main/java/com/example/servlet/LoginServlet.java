@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if ((Arrays.asList(users).contains(req.getAttribute("login")))
+        if ((users.getUsers().contains(req.getParameter("login")))
                 && req.getAttribute("password") != ("")) {
             HttpSession session = req.getSession();
             session.setAttribute("user", req.getAttribute("login"));
